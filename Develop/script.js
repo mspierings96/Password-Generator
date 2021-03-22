@@ -2,9 +2,9 @@
 var generateBtn = document.querySelector("generate");
 /* Variable Arrays Begin */
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var specialChar = ["!", "@", "3", "$", "%", "^", "&", "*", "+", "?", "<", "~", "_"];
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var specialCharacter = ["!", "@", "3", "$", "%", "^", "&", "*", "+", "?", "<", "~", "_"];
 /* Variable Arrays End */
 
 /* Variable Declaration Begins */
@@ -57,14 +57,6 @@ function generatePassword() {
     console.log("Special Character" + confirmSpecialCharacter);
   };
 
-  /* Random variable generation loop begins */
-  for (var i = 0; i < passwordLength; i++) {
-    var allChoices = userChoices[Math.floor(Math.random() * userChoices.length)];
-    passwordBlank.push(allChoices);
-    console.log(allChoices);
-  }
-  /* Random variable generation loop ends */
-
   /* Non-Answered variable for password contents & length begins */
   var passwordBlank = [];
   /* Non-Answered variable for password contents * length ends */
@@ -72,7 +64,7 @@ function generatePassword() {
 
   /* Variables if user chooses not to answer begins*/
   if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecialCharacter) {
-    userChoices = alert("Please select a required criteria.");
+    alert("Please select a required criteria.");
   }
 
   /* If user chooses four variables */
@@ -98,7 +90,7 @@ function generatePassword() {
   }
 
   else if (confirmSpecialCharacter && confirmNumber && confirmUpper) {
-    userChoices = lowerCase.concat(specialCharacter, number);
+    userChoices = lowerCase.concat(SpecialCharacter, number);
     console.log(userChoices);
   }
 
@@ -129,7 +121,7 @@ function generatePassword() {
   }
 
   else if (confirmNumber && confirmSpecial) {
-    userChoices = number.concat(specialCharacter);
+    userChoices = number.concat(SpecialCharacter);
     console.log(userChoices);
   }
 
@@ -152,7 +144,7 @@ function generatePassword() {
   }
 
   else if (confirmSpecialCharacter) {
-    userchoice = specialCharacter;
+    userchoice = SpecialCharacter;
     console.log(userChoices);
   }
 
@@ -161,6 +153,13 @@ function generatePassword() {
   console.log("Your generated password is: " + password);
   return password;
 
-}
+  /* Random variable generation loop begins */
+  for (var i = 0; i < passwordLength; i++) {
+    var allChoices = userChoices[Math.floor(Math.random() * userChoices.passwordLength)];
+    passwordBlank.push(allChoices);
+    console.log(allChoices);
+  }
+    /* Random variable generation loop ends */
 
-userChoices ();
+
+}
