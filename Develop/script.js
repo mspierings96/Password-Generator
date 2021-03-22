@@ -125,8 +125,6 @@ function generatePassword() {
     console.log(userChoices);
   }
 
-
-
   /* If user chooses one variable */
   else if (confirmLower) {
     userChoices = lowerCase;
@@ -148,18 +146,17 @@ function generatePassword() {
     console.log(userChoices);
   }
 
+  /* Random variable generation loop begins */
+  for (var i = 0; i < passwordLength; i++) {
+    var allChoices = userChoices[Math.floor(Math.random() * passwordLength)];
+    passwordBlank.push(allChoices);
+    console.log(allChoices);
+  }
+  /* Random variable generation loop ends */
+
   /* Password Generation Final */
   var password = passwordBlank.join("");
   console.log("Your generated password is: " + password);
   return password;
-
-  /* Random variable generation loop begins */
-  for (var i = 0; i < passwordLength; i++) {
-    var allChoices = userChoices[Math.floor(Math.random() * userChoices.passwordLength)];
-    passwordBlank.push(allChoices);
-    console.log(allChoices);
-  }
-    /* Random variable generation loop ends */
-
 
 }
