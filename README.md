@@ -16,7 +16,7 @@ C:\Users\mitch\Documents\Challenge-3\friendly-parakeet\Develop
 * Javascript
 
 ## Website
-
+https://mspierings96.github.io/Password-Generator/
 
 ## Git Repo Link
 https://github.com/mspierings96/Password-Generator
