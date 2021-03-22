@@ -13,6 +13,7 @@ var confirmUpper;
 var confirmLower;
 var confirmSpecialCharacter;
 var confirmNumber;
+var userChoices;
 /* Variable Declaration Ends */
 
 // Get references to the #generate element
@@ -159,4 +160,7 @@ function generatePassword() {
   var password = passwordBlank.join("");
   console.log("Your generated password is: " + password);
   return password;
+
 }
+
+userChoices ();
